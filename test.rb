@@ -56,11 +56,32 @@ describe Array do
 	it "#clear the elements in an array" do
 		expect(@arrayClear.clear).to eq([])
 	end
+
 	after(:all) do
 		puts "\nTest Complete\n"
 	end
 end
 
+#example of a using let 
+#let only creates the vars where you call them
+#this saves memory
+#The difference is that you're declaring a method with let
+# rather than setting an instance variable - which allows this memoization
+
+describe Array do
+	#the syntax for let:
+	let(:array){Array.new}
+	let(:array_filled){[30, 40, 50]}
+
+	it "should join two arrays together" do
+		#call the memoized value sans colon
+		expect(array|array_filled).to eq([30, 40, 50])
+	end
+
+	it "#clear the elements in an array" do
+		expect(array_filled.clear).to eq([])
+	end
+end
 
 
 
