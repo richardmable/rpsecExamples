@@ -19,24 +19,24 @@ end
 #only need to know if it failed or passed
 # :each is the default, runs before each test
 # :all means only do this once before the test is run
-# describe Array do
-# 	#the before action, create a new array  
-# 	before(:all) do
-# 		@array = Array.new   
-# 	end
-# 	#run the test
-# 	it "#new should return a blank instance" do     
-# 		expect(@array).to eq([])   
-# 	end
-# 	#run another test
-# 	it "should allow you to #count the items in it" do     
-# 		expect(@array.count).to eq(0)   
-# 	end
-# 	#message to display once the tests are done
-# 	after(:all) do     
-# 		puts "\nTest complete."   
-# 	end 
-# end
+describe Array do
+	#the before action, create a new array  
+	before(:all) do
+		@array = Array.new   
+	end
+	#run the test
+	it "#new should return a blank instance" do     
+		expect(@array).to eq([])   
+	end
+	#run another test
+	it "should allow you to #count the items in it" do     
+		expect(@array.count).to eq(0)   
+	end
+	#message to display once the tests are done
+	after(:all) do     
+		puts "\nTest complete."   
+	end 
+end
 
 #can run tests with --order rand
 #this will randomize the order of the tests
